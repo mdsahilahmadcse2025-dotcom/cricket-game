@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Sujata ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff4b91,#8e44ad);
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+    color:white;
+    z-index:10;
+}
+
+h1{
+    font-size:4rem;
+    animation:glow 2s infinite alternate;
+}
+
+p{
+    font-size:1.3rem;
+    margin:20px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff1493;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px white;
+    }
+    to{
+        text-shadow:0 0 30px white,
+                    0 0 50px pink;
+    }
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    font-size:25px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+#message{
+    display:none;
+    margin-top:30px;
+    font-size:1.5rem;
+    animation:fade 2s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💖 Sujata 💖</h1>
+
+    <p>
+        From the moment you came into my life,
+        everything became beautiful.
+    </p>
+
+    <button onclick="showLove()">
+        Open My Heart ❤️
+    </button>
+
+    <div id="message">
+        💍 Sujata, Will You Be Mine Forever? 💖<br><br>
+        I Love You ❤️
+    </div>
+</div>
+
+<script>
+
+function showLove(){
+    document.getElementById("message").style.display="block";
+}
+
+function createHeart(){
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*30)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
